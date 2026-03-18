@@ -20,12 +20,11 @@
             margin: 0;
         }
 
-        .checker-card {
+        .box {
             background-color: #212529;
             border: 2px solid #ffc107;
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             max-width: 450px;
             width: 100%;
         }
@@ -35,24 +34,17 @@
             color: #adb5bd;
             margin-bottom: 20px;
         }
-
-        summary {
-            cursor: pointer;
-            color: #ffc107;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
 
-    <div class="checker-card">
+    <div class="box">
         <h2 class="text-warning mb-3">Heat Index Checker</h2>
 
         <details>
-            <summary>▼ Note:</summary>
+            <summary>Note</summary>
             <p class="instruction-box">
-                Input the temperature (°C) and humidity (%), then click Check to see the heat index and its status. [cite: 31]
+                Input the temperature (°C) and humidity (%), then click Check to see the heat index and its status.
             </p>
         </details>
 
@@ -68,10 +60,6 @@
 
         <button class="btn btn-warning w-100 fw-bold" onclick="checkHI()">Check</button>
 
-        <p class="mt-4 text-center mb-0" style="font-size: 0.75rem;">
-            Source: <a href="https://www.noaa.gov/" class="text-info text-decoration-none" target="_blank">NOAA</a> | 
-            <a href="https://www.w3schools.com" class="text-info text-decoration-none" target="_blank">W3Schools</a>
-        </p>
     </div>
 
     <script>
@@ -106,10 +94,9 @@
                     status = "Extreme Heat / Danger";
                     break;
                 default:
-                    status = "Unknown/Error";
+                    status = "Cannot be determined...";
             }
 
-            // Display information using window.alert 
             alert("Heat Index: " + HeatIndex.toFixed(1) + "°C\nStatus: " + status);
         }
     </script>
